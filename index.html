@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>const</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="We are working through online path, here we are sharing online links. As per issues and problems we can also serve at community level. Our service is not limited in one sector we provide all kinds of services in social, economic, financial, educational, emotional cultural and environmental issues.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* Navbar styles */
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #0056b3 !important;
+            font-size: 24px;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 10px 15px;
+        }
+
+        .nav-link:hover {
+            color: #0056b3 !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px;
+        }
+
+        /* Responsive navbar toggler on the left and search icon on the right */
+        @media (max-width: 991px) {
+            /* Move the navbar-toggler to the left */
+            .navbar-toggler {
+                order: -1; /* Places the toggler before the brand */
+            }
+
+            /* Move the search icon to the right */
+            .navbar-nav {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .navbar-nav .search-icon {
+                order: 2; /* Moves search icon to the far right */
+                margin-left: auto; /* Align it to the right */
+            }
+
+            .navbar-nav .nav-item {
+                order: 1; /* Other menu items stay in the middle */
+            }
+
+            .navbar-brand {
+                max-width: 80%;
+            }
+
+            .brand-text {
+                font-size: 18px;
+            }
+        }
+
+        /* Project image styles */
+        .project-image,
+        .project-image1 {
+            filter: grayscale(0%);
+            transition: filter 0.6s ease-in-out;
+        }
+
+        .project-image:hover,
+        .project-image1:hover {
+            filter: grayscale(0%);
+        }
+
+        @media (hover: none) {
+            .project-image,
+            .project-image1 {
+                filter: grayscale(0%);
+                transition: filter 0.6s ease-in-out;
+            }
+
+            .project-image:active,
+            .project-image1:active {
+                filter: grayscale(0%);
+            }
+        }
+
+        /* Fading effect for project-image1 */
+        .project-image1 {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .project-image1.show {
+            opacity: 1;
+        }
+
+        .navbar-brand {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand-text {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 700;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .navbar-brand p {
+            font-family: "Lucida Calligraphy", cursive;
+            font-size: 14px;
+            margin: 0;
+            display: block;
+            color: black;
+            line-height: 1;
+        }
+
+        @media (max-width: 576px) {
+            .brand-text {
+                font-size: 16px;
+            }
+
+            .navbar-brand p {
+                font-size: 10px;
+            }
+        }
+
+        .bg-dark a:hover {
+            color: #0056b3 !important;
+            transition: color 0.3s ease;
+        }
+
+        @media (max-width: 991px) {
+            .bg-dark .d-flex {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .bg-dark .d-flex.flex-column.flex-lg-row.gap-2.gap-lg-4.justify-content-lg-end {
+                flex-direction: row !important;
+                justify-content: center;
+            }
+
+            .bg-dark .col-lg-8,
+            .bg-dark .col-lg-4 {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .bg-dark .d-flex.flex-column.flex-lg-row {
+                align-items: center;
+            }
+        }
+        @media (max-width: 991px) {
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-toggler {
+        order: 1;
+    }
+    
+    .navbar-brand {
+        order: 2;
+        margin: 0;
+    }
+    
+    .search-icon-mobile {
+        order: 3;
+        margin-left: auto;
+    }
+    
+    .navbar-collapse {
+        order: 4;
+    }
+    
+    .search-icon {
+        display: none;
+    }
+}
+
+  /* Update the search bar styles */
+    #searchBar {
+        transform: translateY(-100%);
+        transition: transform 3s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+        padding: 1rem 0;
+    }
+
+    #searchBar.show {
+        transform: translateY(100%);
+    }
+     
+    /* Center the carousel text */
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Ensure the caption is visible on all screen sizes */
+@media (max-width: 768px) {
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+}
+
+/* Make the text bold */
+.carousel-caption h1,
+.carousel-caption p {
+    font-weight: bold;
+}
+
+/* Adjust font size for responsiveness */
+@media (min-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 3rem;
+    }
+    .carousel-caption p {
+        font-size: 1.5rem;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Section -->
+    <section class="bg-dark py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="d-flex flex-column flex-lg-row gap-2 gap-lg-4">
+                        <a href="tel:+254723106522" class="text-light text-decoration-none">
+                            <i class="fas fa-phone-alt me-2"></i>+254 723 106522
+                        </a>
+                        <a href="mailto:info@danhillconstructioncompany.co.ke" class="text-light text-decoration-none">
+                            <i class="fas fa-envelope me-2"></i>info@danhillconstructioncompany.co.ke
+                        </a>
+                        <span class="text-light">
+                            <i class="far fa-clock me-2"></i>Mon - Sat 9:00 - 19:00
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex flex-column flex-lg-row gap-2 gap-lg-4 justify-content-lg-end">
+                        <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Search Bar -->
+<div id="searchBar" class="container-fluid py-3" style="display: none; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6;">
+    <div class="container">
+        <div class="position-relative">
+            <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+            <button class="btn position-absolute end-0 top-50 translate-middle-y border-0" type="button" id="closeSearch" style="background: none; padding-right: 15px;">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a style="margin: 10px;" class="navbar-brand d-flex align-items-center" href="#">
+            <span class="brand-text">DANHILL CONSTRUCTION</span>
+            <p><i>WE BUILD YOUR VISION</i></p>
+        </a>
+        <a class="nav-link d-lg-none search-icon-mobile" href="#">
+            <i class="fas fa-search"></i>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Our Process</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                <li class="nav-item search-icon d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- slideshow -->
+ <section id="slideshow">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img1.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption" style="text-align: center; justify-content:center; align-items: center;">
+                    <h5 style="">Your Vision, Our Expertise</h5>
+                    <h1 style="font-size: 80px;">Transforming Spaces</h1>
+                    <h1 style="font-size: 80px;">Innovative & Elegant</h1>
+                    <p>At DanhillCo, we blend artistry with engineering to create stunning interior spaces that reflect your personal</p>
+                    <p>style. Our team of certified professionals is dedicated to bringing your vision to life.</p>
+                    <h1></h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img2.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption " style="text-align: center; justify-content:center; align-items: center;">
+                    <h5>Commitment to Excellence</h5>
+                    <h1 style="font-size: 80px;">Crafting Exceptional</h1>
+                    <h1 style="font-size: 80px;">Spaces</h1>
+                    <h1 style="color: cornflowerblue;">Functional & Aesthetic</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img3.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption " style="text-align: center; justify-content:center; align-items: center;">
+                    <h1>Slide 3 Heading</h1>
+                    <p>Slide 3 description.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+
+
+    <!-- Projects Section -->
+    <section class="container my-5">
+        <div class="text-center mb-5" style="background-color:deeppink;">
+            <h1 class="display-4" style="margin:10px">Our Projects</h1>
+            <p class="lead">We are here to give back to the society</p>
+        </div>
+
+        <div class="row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-md-6">
+                <img src="./assets/images/mwanadada.png" class="img-fluid project-image" alt="Mwanadada project">
+            </div>
+            <div class="col-md-6">
+                <h2>Mwanadada project</h2>
+                <p>Our emphasis and base on informing, training and guiding young girls on menstrual hygiene, menstrual hygiene products usage and disposal, sexual health, GBV and Rape.</p>
+                <p>The above topics are all well scripted in our manual guide book which enables smooth facilitation of our classes.</p>
+                <p>The program is also incorporated with life skills and mentorship to break the monotony of classroom boredom and to enable the girls keep informed of values, code of conduct and self-actualization in day-to-day life.</p>
+                <p>After completion of the course our aim is to have champions and leaders whom can share and guide others through the training given unto them. We also promote a number of girls into our main group as beneficiaries of part of the program to help us whenever we do facilitation on the same topics to girls of their same age.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5" data-aos="fade-up" id="chessmove">
+            <div class="col-md-6 order-md-2">
+                <div style="position: relative; height: 300px;"> <!-- Ensure a container for positioning images -->
+                    <img src="./assets/images/ches1.jpg" class="img-fluid project-image1 show" id="slide1" alt="Chess club">
+                    <img src="./assets/images/chess2.jpg" class="img-fluid project-image1" id="slide2" alt="Chess club">
+                    <img src="./assets/images/chess3.jpg" class="img-fluid project-image1" id="slide3" alt="Chess club">
+                    <img src="./assets/images/chess4.jpg" class="img-fluid project-image1" id="slide4" alt="Chess club">
+                    <img src="./assets/images/chess5.jpg" class="img-fluid project-image1" id="slide5" alt="Chess club">
+                    <img src="./assets/images/chess6.jpg" class="img-fluid project-image1" id="slide6" alt="Chess club">
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6 order-md-1">
+                <h2>Chess club</h2>
+                <p>Growing up in Kibera we had a lot of playing fields as we continue growing so does the developments around our locality hence the space which was used as playing field were develop and it was difficult now for us to go and play football and most of sports this pose a huge risk to the generation which is coming up since they have a lot of time if not well utilized it can go to waste. Secondly Kibera being largest informal settlements In Nairobi when kids get a lot of time, they may end up in substance abuse in boys and teenage pregnancy in girls, with this we introduced chess in Kibera.</p>
+                <p>Our classes run each Saturday from 2:00 - 4:00pm at Anajali primary school, besides chess we do mentorship to the kids and also have a group therapy where they talk on how they feel. Apart from having fun chess has diverse skills like critical and analytical thinking, responsibility, turn taking improving and sharpening their memories. these lessons equip the kids with lifelong skills which they will use after school and beyond we believe the way to save the future is to start small.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h2>Passion Driven</h2>
+                    <p>Giving back to the society</p>
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+254712345678" class="text-light">+254712345678</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:wenstech@gmail.com" class="text-light">wenstech@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./about.php" class="text-light">About</a></li>
+                        <li><a href="./mission.php" class="text-light">Objectives</a></li>
+                        <li><a href="./service.php" class="text-light">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <!-- Additional footer content if needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="bg-dark text-center text-light py-2">
+        <small>© 2024 All Rights Reserved Passion Driven</small>
+    </div>
+
+   
+    <script>
+        AOS.init({
+            debounceDelay: 50,
+            throttleDelay: 99,
+            offset: 120,
+            delay: 0,
+            duration: 1000,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+    </script>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.project-image1');
+
+        function showSlides() {
+            // Hide all images by removing the 'show' class
+            slides.forEach(slide => {
+                slide.classList.remove('show');
+            });
+
+            // Increment the slide index
+            slideIndex++;
+
+            // If we've reached the end of the slides, loop back to the start
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Show the current slide by adding the 'show' class
+            slides[slideIndex - 1].classList.add('show');
+
+            // Change slide every 3 seconds (3000 milliseconds)
+            setTimeout(showSlides, 4000);
+        }
+
+        // Initialize the slideshow when the page loads
+        showSlides();
+    </script>
+
+   <script>
+    // Search functionality
+    const searchIcons = document.querySelectorAll('.search-icon, .search-icon-mobile');
+    const searchBar = document.getElementById('searchBar');
+    const closeSearch = document.getElementById('closeSearch');
+
+    searchIcons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchBar.style.display = 'block';
+            // Use setTimeout to ensure display:block is applied before adding the show class
+            setTimeout(() => {
+                searchBar.classList.add('show');
+                searchBar.querySelector('input').focus();
+            }, 10);
+        });
+    });
+
+    closeSearch.addEventListener('click', () => {
+        searchBar.classList.remove('show');
+        // Wait for transition to complete before hiding
+        setTimeout(() => {
+            searchBar.style.display = 'none';
+        }, 1000);
+    });
+</script>
+
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</body>
+
+</html>
