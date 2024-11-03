@@ -401,10 +401,94 @@
     background-color: #005f87;
     color: #ffffff;
   }
+  
+
+  footer {
+    color: white;
+    position: relative;
+  }
+
+  /* Ensure footer content has margin from the edges of the background image */
+  footer .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Light-blue overlay with padding and border-radius for rounded corners */
+  footer .overlay {
+    background-color: rgba(173, 216, 230, 0.8); /* Light-blue shading */
+    padding: 20px;
+    margin: 20px; /* Space from the edges */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  /* Styling for icons */
+  .fa-facebook,
+  .fa-instagram,
+  .fa-linkedin {
+    color: #2d2d72; /* Icon color */
+    transition: color 0.3s ease;
+  }
+
+  .fa-facebook:hover,
+  .fa-instagram:hover,
+  .fa-linkedin:hover {
+    color: #0056b3; /* Hover effect for social media icons */
+  }
+
+  /* Responsive spacing for the columns */
+  @media (max-width: 768px) {
+    footer h5 {
+      font-size: 1.2rem;
+    }
+    footer p {
+      font-size: 1rem;
+    }
+  }
+  
+  
+
+  /* Loader styles */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height for the loader */
+            position: fixed; /* Fixes the loader in place */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: deepskyblue; /* Set background color to DeepSkyBlue */
+            z-index: 9999; /* Ensure loader is on top */
+        }
+
+        .loader {
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            background-color: #FF5C35;
+            animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(0.5) rotate(180deg);
+            }
+        }
+
     </style>
 </head>
 
 <body>
+    <!-- Loader animation -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+   
 
     <!-- Section -->
     <section class="bg-dark py-2">
@@ -537,7 +621,7 @@
     <div class="row">
         <!-- Content Section -->
         <div class="content col-lg-7">
-            <h2 class="mb-4 text-center text-lg-start"><b>Who We Are</b></h2>
+            <h2 class="mb-4 text-center text-lg-start"><b style="color: deepskyblue;">Who We Are</b></h2>
             <p class="text-center text-lg-start">With over a decade of experience, Danhill Construction is a premier architectural and interior design company based in Kenya. Our team of dedicated professionals specializes in delivering innovative and high-quality solutions to bring your visions to life.</p>
 
             <h3 class="mt-5 mb-4 text-center text-lg-start"><b>Our Mission</b></h3>
@@ -888,33 +972,52 @@
         </div>
     </section> -->
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h2>const</h2>
-                    <p>const</p>
-                    <h5>Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone"></i> <a href="tel:+254712345678" class="text-light">+254712345678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:wenstech@gmail.com" class="text-light">wenstech@gmail.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>About</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">About</a></li>
-                        <li><a href="#" class="text-light">services</a></li>
-                        <li><a href="# class="text-light">Portfolio</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <!-- Additional footer content if needed -->
-                </div>
-            </div>
+    
+
+
+    <!-- footer -->
+     <!-- Footer -->
+<footer class="bg-dark text-light py-5" style="position: relative; background-image: url('img5.png'); background-size: cover; background-position: center;">
+  <!-- Light-blue overlay shading -->
+  <div style="background-color: rgba(0, 86, 179, 0.5); padding: 20px; margin: 20px; border-radius: 10px;">
+    <div class="container">
+      <div class="row">
+        <!-- First Column: About Us -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="text" style="color: #072D4B; font-weight: bold;">About Us</h5>
+          <img src="img3.png" alt="DanhillCo Logo" class="img-fluid mb-3" style="max-width: 120px;">
+          <p class="text" style="color: #ffffff;">At DanhillCo, we specialize in transforming spaces through innovative interior design and construction. Our passion for design ensures that we create beautiful, functional environments tailored to your needs.</p>
+
+          <!-- Social Media Icons -->
+          <div>
+            <a href="#" class="text-dark me-2"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-dark me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-dark me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+          </div>
         </div>
-    </footer>
+        
+        <!-- Second Column: Contact Us -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="text" style="color: #072D4B; ">Contact Us</h5>
+          <ul class="list-unstyled text-light">
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@danhillconstructioncompany.co.ke" class="text-light">info@danhillconstructioncompany.co.ke</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254723106522" class="text-light">+254 723 106522</a></li>
+          </ul>
+        </div>
+        
+        <!-- Third Column: Empty or Placeholder for Future Use -->
+        <div class="col-md-4">
+          <!-- Add more content here if needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 
     <div class="bg-dark text-center text-light py-2">
         <small>© 2024 All Rights Reserved const</small>
@@ -989,6 +1092,14 @@
         }, 1000);
     });
 </script>
+<script>
+        // Hide loader and show content after page load
+        window.onload = function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        };
+    </script>
+ 
 
 
 
